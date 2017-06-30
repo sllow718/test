@@ -1,0 +1,49 @@
+{% extends 'webapp/base.html' %}
+{% block body %}
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+{% load static %}
+
+
+<body>
+
+
+
+
+<!-- About Container -->
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:1500px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">FREQUENTLY ASKED QUESTION</span></h5>
+    <h3>What is the Resource Information Database(RID)?</h3>
+    <p>RID is known as Resources Information Database that allows you to upload and search available materials on the cloud. RID promotes communication and collaboration across companies to bring the most value out of wastes before going into the landfill</p>
+    <h3>How do I add new resources?</h3>
+    <p>Click the 'plus' icon on the navigation bar and then fill up the form accordingly to add new resources into the database.</p>
+    <h3>How do I edit the existing resources?</h3>
+    <p>Click the 'edit' icon on the navigation bar to retrieve and edit the resource.</p>
+    <h3>How do I retrieve the existing resources?</h3>
+    <p>Click the 'search' icon on the navigation bar to retrieve a resource that is of your interest.</p>
+
+    <div class="w3-panel w3-leftbar w3-light-grey">
+      <p><i>The RID is still currently under construction, if you would like to help out in populating the data, please send us an email at a0129512@u.nus.edu.</i></p>
+      <p>Creator</p>
+    </div>
+
+
+    <p><strong>In collaboration with:</strong></p>
+    <img src="{% static 'webapp/images/logo_astar.jpg' %}" style="width:100%;max-width:200px" class="w3-margin-top">
+    <p><strong>Address:</strong> 15 Adr street, 5015, NY</p>
+  </div>
+</div>
+
+
+
+</div>
+
+{% endblock %}

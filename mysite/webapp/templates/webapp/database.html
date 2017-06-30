@@ -1,0 +1,62 @@
+{% extends 'webapp/base.html' %}
+{% block body %}
+
+	<style>
+		table {
+		    font-family: arial, sans-serif;
+		    border-collapse: collapse;
+		    width: 100%;
+		}
+
+		td, th {
+		    border: 1px solid black;
+		    text-align: left;
+		    padding: 8px;
+		}
+
+		tr:nth-child(even) {
+		    background-color: lightblue;
+		}
+
+	</style>
+	<div class="col-sm-10 col-md-3 w3-padding-64">
+	<form role="search" method="get" action="{% url 'addresources:dfs' %}">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="q" value="{{ request.GET.q }}">
+                </div>
+                <button type="submit" class="btn btn-default">Search Path</button>
+    </form>
+		<table>
+
+			  <tr>
+			    <th>Name</th>
+			    <th>HS Code</th>
+			    <th>Match1</th>
+			    <th>Match1</th>
+			    <th>Match2</th>
+			    <th>Match3</th>
+			    <th>Match4</th>
+			    <th>Match5</th>
+			    <th>Match6</th>
+			  </tr>
+
+			{% for resources in all_resources %}
+				<tr>
+					<div class="tooltip">
+					<td><a href="{% url 'addresources:details' resources.id %}" data-toggle="tooltip" data-placement="bottom" title="Potential Matches: ...">{{resources.Name_of_Resource}}</a></td>
+					</div>
+				    <td>{{resources.HS_Code}}</td>
+				    {% for match in resources.addmatchingresources_set.all %}
+				    	<td>{{match.Name_of_Matching_Resource}}</td>
+							
+				    {% endfor %}
+				</tr>
+			{% endfor %}
+		</table>
+	</div>
+	<script>
+		$(document).ready(function(){
+		    $('[data-toggle="tooltip"]').tooltip();
+		});
+	</script>
+{% endblock %}

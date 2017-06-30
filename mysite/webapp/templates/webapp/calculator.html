@@ -1,0 +1,37 @@
+{% extends 'webapp/base.html' %}
+{% block body %}
+
+{% load static %}
+
+<div class="w3-container w3-content w3-left w3-padding-64" style="max-width:800px" id="band">
+    <h2 class="w3-wide">Recycling calculator</h2>
+    <p class="w3-opacity"><i>Find out how much potential tax rebates you can get from recycling!</i></p>
+    <p class="w3-justify"> >>INSERT TEXT HERE<<
+                    </p>
+
+        </div>
+
+<html>
+<title>Fahrenheit to Celcius Temperature Converter</title>
+<body>
+
+<h2>Recycling calculator</h2>
+<p>Enter the weight and type of input you would like to recycle: </p>
+
+<p>
+  <label>Weight</label>
+  <input id="inputFahrenheit" type="number" placeholder=" in KG.." oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+</p>
+<p>Potential Savings: $<span id="outputCelcius"></span></p>
+
+<script>
+function temperatureConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("outputCelcius").innerHTML=(valNum-32)/1.8;
+}
+</script>
+</body>
+</html>
+
+
+{% endblock %}

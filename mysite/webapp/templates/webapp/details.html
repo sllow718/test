@@ -1,0 +1,85 @@
+{% extends 'webapp/base.html' %}
+{% block title %}Add Resources{% endblock %}
+{% block albums_active %}active{% endblock %}
+
+{% block body %}
+<div class="container-fluid w3-padding-64"  >
+
+    <div class="row">
+
+        <div class="col-sm-4 col-md-3">
+            <!--Left side info-->
+            <div class="panel panel-primary"> <!--empty panel, white square-->
+                <div class="panel-heading">
+                    <h3>
+                    <a href= "{% url 'addresources:addresources_update' add_resources.id %}">
+                      <span class="glyphicon glyphicon-edit" aria-hidden="true" style="color:white"></span>
+                    </a>
+                    &nbsp;{{add_resources.Name_of_Resource}}
+                    </h3>
+                </div>
+
+                <div class="panel-body">
+                    <p>Name: {{add_resources.Name_of_Resource}}</p>
+                    <p>HS Code: {{add_resources.HS_Code}}</p>
+                    <form action="{% url 'addresources:delete_addresources' add_resources.id %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <input type="hidden" name="add_resources_id" value="{{ add_resources.id }}" />
+                        <button type="submit" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--Right side info-->
+        <div class="col-sm-8 col-md-9">
+            <ul class="nav nav-pills" style="margin-bottom: 10px;">
+                <li role="presentation" class="active"><a href="{% url 'addresources:details' add_resources.id %}">View All</a></li>
+                <li role="presentation"><a href="{% url 'addresources:addmatchingresourcesCreate' add_resources.id %}">Add Matches</a></li>
+            </ul>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                        <h3>All Matches</h3>
+
+                        {% if error_message %}
+                            <p><strong>{{ error_message }}</strong></p>
+                        {% endif %}
+
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Name of Matches</th>
+                                <th>Matching HS Code</th>
+                                <th>Action</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for addmatches in add_resources.addmatchingresources_set.all %}
+                                <tr>
+                                    <td><a href="{% url 'addresources:technologyDetails' add_resources.id addmatches.id %}">{{ addmatches.Name_of_Matching_Resource }}</a></td>
+                                    <td>{{ addmatches.Matching_HS_Code }}</td>
+                                  
+                                    <td>
+                                        <form action="{% url 'addresources:delete_matches' add_resources.id addmatches.id %}" method="post" style="display: inline;">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="addmatches_id" value="{{ addmatches.id }}" />
+                                            <button type="submit" class="btn btn-danger btn-xs">
+                                                <span class="glyphicon glyphicon-remove"></span>&nbsp; Delete
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

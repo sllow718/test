@@ -1,0 +1,61 @@
+{% extends 'webapp/base.html' %}
+{% block title %}Add Resources{% endblock %}
+{% block albums_active %}active{% endblock %}
+
+{% block body %}
+<div class="container-fluid w3-padding-64">
+
+    <div class="row">
+
+	    <!--Left side info-->
+        <div class="col-sm-4 col-md-3">
+            <div class="panel panel-primary"> <!--empty panel, white square-->
+                <div class="panel-heading">
+                    <h3>{{add_resources.Name_of_Resource}} -> {{add_matchingresources.Name_of_Matching_Resource}}</h3>
+                </div>
+
+                <div class="panel-body">
+                    <h3>Input</h3>
+                    <p>Name: {{add_resources.Name_of_Resource}}</p>
+                    <p>HS Code: {{add_resources.HS_Code}}</p>
+                    <h3>Output</h3>
+                    <p>Name: {{add_matchingresources.Name_of_Matching_Resource}}</p>
+                    <p>HS Code: {{add_matchingresources.Matching_HS_Code}}</p>
+                    <a href="{% url 'addresources:details' add_resources.id %}" class="btn btn-primary btn-sm" role="button">Back</a>
+                </div>
+            </div>
+        </div>
+
+        <!--Right side info-->
+        <div class="col-sm-8 col-md-9">
+            <ul class="nav nav-pills" style="margin-bottom: 10px;">
+                <li role="presentation" class="active"><a href="{% url 'addresources:technologyDetails' add_resources.id add_matchingresources.id %}">View Technology</a></li>
+                <li role="presentation"><a href="{% url 'addresources:technologyCreate' add_resources.id add_matchingresources.id %}">Add Technology</a></li>
+            </ul>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+
+
+                    {% if add_matchingresources.technologies_set.all %}
+                        {% for technology in add_matchingresources.technologies_set.all %}
+                        <a href="{% url 'addresources:technology_update' add_resources.id add_matchingresources.id technology.id %}" class="btn btn-primary btn-sm" role="button"><span class="glyphicon glyphicon-edit" aria-hidden="true" style="color:white"></span>&nbsp; Edit Technology</a>
+
+                        <h3>Method</h3>
+                        <p>{{technology.Method}}</p>
+                        <h3>Process</h3>
+                        <p>{{technology.Process}}</p>
+                        {% endfor %}
+                    {% else %}
+                        <p>Technology information is not available. Kindly click 'Add Technology' tab to add new technology.</p>
+                    {% endif %}
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

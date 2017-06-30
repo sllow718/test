@@ -1,0 +1,33 @@
+{% extends 'webapp/base.html' %}
+{% block title %}Add Resources{% endblock %}
+{% block albums_active %}active{% endblock %}
+
+{% block body %}
+<div class="container-fluid w3-padding-64">
+
+    <div class="row">
+    <div class="col-sm-12 col-md-7">
+
+            <div class="panel panel-primary"> <!--empty panel, white square-->
+            <div class="panel-heading">
+            <h3>Add New Resources Into The Database</h3> </div>
+
+                <div class="panel-body">
+
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    <form class="form-horizontal" role="form" action="" method="post">
+                        {% csrf_token %}
+                        {% include 'webapp/form_template.html' %}
+                        <div class="form-group">
+                            <div class="col-sm-offset-5 col-sm-10">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock %}

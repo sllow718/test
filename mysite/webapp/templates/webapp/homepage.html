@@ -1,0 +1,90 @@
+{% extends 'webapp/base.html' %}
+{% block body %}
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+{% load static %}
+<body>
+
+
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+    <h2 class="w3-wide">Resource Information Database</h2>
+    <p class="w3-opacity"><i>Envisioning a better future</i></p>
+    <p class="w3-justify">Recycling in Singapore has always been tough given the lack of structure and community.
+                  The Research Information Database(RID) hopes to fill up this gap in Singapore by creating a database that seeks to provide free and direct information to how recycling can create useful byproducts.
+                   We hope that organisations will find this a useful tool when they seek for avenues to recycle their products.
+                   We currently have databases for food and plastic and are currently looking for contributors who can contribute for other forms of waste.
+                    </p>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-half">
+        <p>Food</p>
+        <img src="{% static 'webapp/images/foodicon.png' %}" class="w3-round w3-margin-bottom" alt="Random Name" style="width:40%">
+      </div>
+
+      <div class="w3-half">
+        <p>Plastic</p>
+        <img src="{% static 'webapp/images/plasticicon.png' %}" class="w3-round w3-margin-bottom" alt="Random Name" style="width:40%">
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+    <div class="w3-content">
+      <div class="w3-third w3-center">
+          <img src="{% static 'webapp/images/thumbs.png' %}" class="w3-round w3-margin-bottom" alt="Random Name" style="width:70%">
+      </div>
+
+      <div class="w3-twothird">
+        <h1>Accessible to all</h1>
+        <h5 class="w3-padding-32">The Resource Information Database (RID) was established to encourage recycling in Singapore by allowing public access to the list of companies which provide recycling services to produce materials required for specific uses.</h5>
+
+        <p class="w3-text-grey">RID is open to academics and recycling companies to input data of outputs and processes with food, paper and plastic wastes.
+                                Other categories of wastes are also encouraged to be added on to the database.
+                              With RID, companies requiring raw materials are then able to tap onto the RID to decide the optimum process and parameters or company required to obtain these recycled raw materials.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-container" style="padding:128px 16px" id="about">
+  <h3 class="w3-center">ABOUT THE COMPANY</h3>
+  <p class="w3-center w3-large">Key features of our company</p>
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-quarter">
+      <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+      <p class="w3-large">Responsive</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Passion</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Design</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Support</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+  </div>
+</div>
+
+  <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+      <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
+  </div>
+
+</body>
+{% endblock %}
