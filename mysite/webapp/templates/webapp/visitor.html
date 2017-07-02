@@ -76,6 +76,47 @@
                     </div>
                 </div>
 
+                <div class="col-sm-8 col-md-9">
+                    <ul class="nav nav-pills" style="margin-bottom: 10px;">
+
+                    </ul>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+
+                                <h3>Method</h3>
+
+                                {% if error_message %}
+                                    <p><strong>{{ error_message }}</strong></p>
+                                {% endif %}
+
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>Technology</th>
+                                        <th>Parameters</th>
+                                        <th>Operating Conditions</th>
+                                        <th>Possible Output</th>
+
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for addmatches in add_resources.addmatchingresources_set.all %}
+                                        <tr>
+                                            <td><a href="{% url 'addresources:technologyDetails' add_resources.id addmatches.id %}">{{ addmatches.Name_of_Matching_Resource }}</a></td>
+                                            <td>{{ addmatches.Matching_HS_Code }}</td>
+                                            <td>{{ addmatches.Extraction_rate }} %</td>
+                                            <td>{{ addmatches.Source }}</td>
+
+
+
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
         </div>
     </div>
 </div>

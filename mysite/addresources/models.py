@@ -17,7 +17,7 @@ class addmatchingresources(models.Model):
     Name_of_Matching_Resource = models.CharField(max_length = 500)
     Matching_HS_Code = models.IntegerField()
     Check_if_matches_interchangeable = models.BooleanField(default=False)
-    Extraction_rate = models.IntegerField(default=0)
+    Extraction_rate = models.DecimalField(max_digits=6,decimal_places=3)
     Source = models.CharField(max_length = 500)
 
     def __str__(self):
