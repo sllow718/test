@@ -22,8 +22,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('webapp.urls')),
     url(r'^ridhome/getinformation', include('getinformation.urls')),
-    url(r'^home/', include('addresources.urls')),
-    url(r'^polls/',include('polls.urls')),
+    url(r'^ridhome/', include('addresources.urls')),
     url(r'^', include('updatelog.urls')),
     url(r'^accounts/login/$', views.login, name='login'),
     url(r'^accounts/logout/$', views.logout, name='logout', kwargs={'next_page': '/'})

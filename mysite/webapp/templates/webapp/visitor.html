@@ -54,6 +54,7 @@
                                 <th>Name of Matches</th>
                                 <th>Matching HS Code</th>
                                 <th>Extraction rate</th>
+                                <th>Source</th>
 
 
                             </tr>
@@ -64,6 +65,8 @@
                                     <td><a href="{% url 'addresources:technologyDetails' add_resources.id addmatches.id %}">{{ addmatches.Name_of_Matching_Resource }}</a></td>
                                     <td>{{ addmatches.Matching_HS_Code }}</td>
                                     <td>{{ addmatches.Extraction_rate }}</td>
+                                    <td>{{ addmatches.Source }}</td>
+
 
 
                                 </tr>

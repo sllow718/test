@@ -25,7 +25,7 @@ SECRET_KEY = '@*6kf+i%^b4&k^2(pual8&y5)hme%nig8xu#@*9i&ga&9qm6h1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['718pohmf.pythonanywhere.com','127.0.0.1' ]
 
 TEMPLATE_DIRS = [(
     BASE_DIR + '/templates/'
@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'polls'
 ]
 
 MIDDLEWARE = [
