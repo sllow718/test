@@ -19,6 +19,8 @@ class addmatchingresources(models.Model):
     Check_if_matches_interchangeable = models.BooleanField(default=False)
     Extraction_rate = models.DecimalField(max_digits=6,decimal_places=3)
     Source = models.CharField(max_length = 500)
+    Method = models.CharField(max_length = 500,help_text="Enter field documentation")
+
 
     def __str__(self):
         return self.Name_of_Matching_Resource

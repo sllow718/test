@@ -12,7 +12,7 @@ class addmatchingresourcesForm(forms.ModelForm):
 
     class Meta:
         model = addmatchingresources
-        fields = ['Name_of_Matching_Resource', 'Matching_HS_Code','Extraction_rate','Source','Check_if_matches_interchangeable']
+        fields = ['Name_of_Matching_Resource', 'Matching_HS_Code','Extraction_rate','Source','Method','Check_if_matches_interchangeable']
 
 class editresourcesForm(forms.ModelForm):
 
