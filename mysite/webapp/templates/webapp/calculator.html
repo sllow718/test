@@ -3,11 +3,12 @@
 
 {% load static %}
 
-<div class="w3-container w3-content w3-left w3-padding-64" style="max-width:800px" id="band">
+<div class="w3-container w3-content w3-left w3-padding-64" style="max-width:600px" >
     <h2 class="w3-wide">Recycling calculator</h2>
-    <p class="w3-opacity"><i>Find out how much potential tax rebates you can get from recycling!</i></p>
-    <p class="w3-justify"> >>INSERT TEXT HERE<<
-                    </p>
+    <p class="w3-opacity"><i>Find out how much potential tax rebates you can get from recycling!<br></i></p>
+    <h4 class="w3-justify"> As an initiative to promote zero wastage, SIMTECH in collaboration with NEA is devising a waste tax relief programme which would allow companies to obtain tax relief should they meet certain recycling criterias.
+                      <br>Find out how much tax relief you or your organisation can possibly get from recycling here!
+                    </h4>
 
         </div>
 
@@ -16,7 +17,26 @@
 <body>
 
 <h2>Recycling calculator</h2>
-<p>Enter the weight and type of input you would like to recycle: </p>
+<p>Select type of Waste: </p>
+<select>
+  <option id="apple">Plastic</option>
+  <option id="orange">Food</option>
+  <option id="pineapple">Paper</option>
+
+</select>
+
+
+
+<script>
+function myFunction() {
+    document.getElementById("apple").text = "newTextForApple";
+}
+</script>
+
+</body>
+</html>
+
+<p><br>Enter the weight and type of input you would like to recycle: </p>
 
 <p>
   <label>Weight</label>
@@ -30,6 +50,8 @@ function temperatureConverter(valNum) {
   document.getElementById("outputCelcius").innerHTML=(valNum-32)/1.8;
 }
 </script>
+<h2>Waste relief table</h2>
+<img src="{% static 'webapp/images/complex.png' %}"  width="600" height="300">
 </body>
 </html>
 

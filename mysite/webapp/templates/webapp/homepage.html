@@ -23,14 +23,19 @@
                    We currently have databases for food and plastic and are currently looking for contributors who can contribute for other forms of waste.
                     </p>
     <div class="w3-row w3-padding-32">
-      <div class="w3-half">
-        <p>Food</p>
+      <div class="w3-third">
+        <h3>Food</h3>
         <img src="{% static 'webapp/images/foodicon.png' %}" class="w3-round w3-margin-bottom" alt="Random Name" style="width:40%">
       </div>
 
-      <div class="w3-half">
-        <p>Plastic</p>
+      <div class="w3-third">
+        <h3>Plastic</h3>
         <img src="{% static 'webapp/images/plasticicon.png' %}" class="w3-round w3-margin-bottom" alt="Random Name" style="width:40%">
+      </div>
+
+      <div class="w3-third">
+        <h3>Paper</h3>
+        <img src="{% static 'webapp/images/paper.png' %}" class="w3-round w3-margin-bottom" alt="Random Name" style="width:40%">
       </div>
 
 
@@ -46,9 +51,9 @@
 
       <div class="w3-twothird">
         <h1>Accessible to all</h1>
-        <h5 class="w3-padding-32">The Resource Information Database (RID) was established to encourage recycling in Singapore by allowing public access to the list of companies which provide recycling services to produce materials required for specific uses.</h5>
+        <h5 class="w3-padding-32 w3-justify">The Resource Information Database (RID) was established to encourage recycling in Singapore by allowing public access to the list of companies which provide recycling services to produce materials required for specific uses.</h5>
 
-        <p class="w3-text-grey">RID is open to academics and recycling companies to input data of outputs and processes with food, paper and plastic wastes.
+        <p class="w3-text-grey w3-justify">RID is open to academics and recycling companies to input data of outputs and processes with food, paper and plastic wastes.
                                 Other categories of wastes are also encouraged to be added on to the database.
                               With RID, companies requiring raw materials are then able to tap onto the RID to decide the optimum process and parameters or company required to obtain these recycled raw materials.</p>
       </div>
@@ -60,31 +65,36 @@
   <p class="w3-center w3-large">Key features of our company</p>
   <div class="w3-row-padding w3-center" style="margin-top:64px">
     <div class="w3-quarter">
-      <img src="{% static 'webapp/images/plasticicon.png' %}">
+      <img src="{% static 'webapp/images/zero.png' %}" style="height:98px">
       <p class="w3-large">Zero Waste</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <p>Aiming for zero waste, maximum recycling.</p>
     </div>
     <div class="w3-quarter">
-      <img src="{% static 'webapp/images/nextgen.png' %}">
+      <img src="{% static 'webapp/images/nextgen.png' %}" style="height:98px">
       <p class="w3-large">Circular economy</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <p>Promoting the idea that all waste can be resources.</p>
     </div>
     <div class="w3-quarter">
-      <img src="{% static 'webapp/images/plasticicon.png' %}">
+      <img src="{% static 'webapp/images/thinking.png' %}" style="height:98px">
       <p class="w3-large">Next generation of digestion technology</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <p>Using the latest technology available to make zero waste possible.</p>
     </div>
     <div class="w3-quarter">
-      <img src="{% static 'webapp/images/rubbish.png' %}">
+      <img src="{% static 'webapp/images/rubbish.png' %}" style="height:98px">
       <p class="w3-large">Energy from Waste</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <p>Pushing the idea that we can generate energy from waste.</p>
     </div>
   </div>
 </div>
 
-  <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-      <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img src="{% static 'webapp/images/forest.jpg' %}"  width="1800" height="500">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+    <h1 class="w3-xxlarge w3-white">We are living on this planet as if we had another one to go to.<br> -Terri Swearingen, Goldman Environmental Prize winner</h1>
+
   </div>
+</header>
+
 
 </body>
 {% endblock %}
