@@ -33,12 +33,26 @@
             </div>
         </div>
 
-        <!--Right side info-->
+
+
         <div class="col-sm-8 col-md-9">
             <ul class="nav nav-pills" style="margin-bottom: 10px;">
-                <li role="presentation" class="active"><a href="{% url 'addresources:details' add_resources.id %}">View All</a></li>
-                <li role="presentation"><a href="{% url 'addresources:addmatchingresourcesCreate' add_resources.id %}">Add Matches</a></li>
+
             </ul>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                      <h2>Technology</h2>
+                      <p>Please select technology: </p>
+                      <select id="test" name="form_select" onchange="showDiv(this)">
+                          <option value="" disabled selected>Select your option</option>
+                          <option value="1">Anaerobic Digestion</option>
+                        </select>
+                    </div>
+                </div>
+        <!--Right side info-->
+        <div id="hidden_div"  style="display:none;" class="col-sm-8 col-md-9">
+
                 <div class="panel panel-default">
                     <div class="panel-body">
 
@@ -55,7 +69,7 @@
                                 <th>Matching HS Code</th>
                                 <th>Extraction rate</th>
                                 <th>Source</th>
-                                <th>Method</th>
+
 
 
                             </tr>
@@ -67,7 +81,7 @@
                                     <td>{{ addmatches.Matching_HS_Code }}</td>
                                     <td>{{ addmatches.Extraction_rate }} %</td>
                                     <td>{{ addmatches.Source }}</td>
-                                    <td>{{ addmatches.Method }}</td>
+
 
 
 
@@ -78,48 +92,56 @@
                     </div>
                 </div>
 
-                <div class="col-sm-8 col-md-9">
-                    <ul class="nav nav-pills" style="margin-bottom: 10px;">
-
-                    </ul>
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-
-                                <h3>Method</h3>
-
-                                {% if error_message %}
-                                    <p><strong>{{ error_message }}</strong></p>
-                                {% endif %}
-
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th>Technology</th>
-                                        <th>Parameters</th>
-                                        <th>Operating Conditions</th>
-                                        <th>Possible Output</th>
+                <div class="panel panel-default">
+                    <div class="panel-body">
 
 
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    {% for addmatches in add_resources.addmatchingresources_set.all %}
-                                        <tr>
-                                            <td><a href="{% url 'addresources:technologyDetails' add_resources.id addmatches.id %}">{{ addmatches.Name_of_Matching_Resource }}</a></td>
-                                            <td>{{ addmatches.Matching_HS_Code }}</td>
-                                            <td>{{ addmatches.Extraction_rate }} %</td>
-                                            <td>{{ addmatches.Source }}</td>
-                                            <td>{{ addmatches.Method }}</td>
+                        <h3>Parameters</h3>
+
+                        {% if error_message %}
+                            <p><strong>{{ error_message }}</strong></p>
+                        {% endif %}
+
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Condition</th>
+                                <th>Value</th>
+                            </tr>
+                            </thead>
+                            <tbody>
 
 
-                                        </tr>
-                                    {% endfor %}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                              <tr>
+                                <td>Temperature</td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td>Catalyst</td>
+                                <td></td>
+                              </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
 
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+function showDiv(select){
+   if(select.value==1){
+    document.getElementById('hidden_div').style.display = "block";
+   } else{
+    document.getElementById('hidden_div').style.display = "none";
+   }
+}
+</script>
+
 {% endblock %}
